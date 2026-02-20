@@ -14,21 +14,21 @@ app.use(cors({
 app.use(express.json());
 
 // Routes
-const personroute = require('./routes/person');
+// const personroute = require('./routes/person');
 const homeroute = require('./routes/home');
-const ringroute = require('./routes/ring');
+// const ringroute = require('./routes/ring');
 const emailroute = require('./routes/email');
 
 app.use('/', homeroute);
-app.use('/person', personroute);
-app.use('/ring', ringroute);
+// app.use('/person', personroute);
+// app.use('/ring', ringroute);
 app.use('/email', emailroute);
 
 // For Vercel serverless functions
 const PORT = process.env.PORT || 5000;
 
 if (process.env.NODE_ENV !== 'production') {
-    app.listen(PORT, function() {
+    app.listen(PORT, function () {
         console.log('Server is running on port ' + PORT);
     });
 }
